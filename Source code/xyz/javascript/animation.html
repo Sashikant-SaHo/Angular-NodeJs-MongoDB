@@ -1,0 +1,61 @@
+<html>
+    <head>
+<style>
+    .container{
+width : 700px;
+height : 400px;
+background : #ffffff;
+position : relative;
+border : 2px solid black;
+    }
+    .football{
+width : 100px;
+height : 100px;
+background-color: red;
+border-radius: 50%;
+margin-left : 50px;
+margin-top : 50px;
+position : absolute
+
+    }
+    .monster{
+width : 200px;
+height : 270px;
+background : url('monster2.jpg') no-repeat ;
+background-size: contain;
+position : absolute;
+top : 10px;
+right : 20px;
+
+
+    }
+    
+</style>
+    </head>
+    <body>
+<div class="container">
+<div id="football" class="football"></div>
+<div id="monster" class="monster"></div>
+</div>
+<hr>
+<button id="start_ani">Start</button>
+
+    </body>
+    <script>
+    document.getElementById('start_ani').addEventListener("click",function(){
+var football = document.getElementById("football");
+var newPos = 0;
+var intRef = setInterval(function(){
+    newPos = newPos + 10;
+football.style.left = newPos+'px';
+if(newPos==330){
+    console.log("Monster dead");
+    document.getElementById('monster').style.background='url("bomb.gif")';
+    clearInterval(intRef)
+}
+},100);
+
+    })
+    </script>
+
+</html>

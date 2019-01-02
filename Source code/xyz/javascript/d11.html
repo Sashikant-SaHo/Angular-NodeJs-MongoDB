@@ -1,0 +1,42 @@
+<html>
+<head></head>
+<body>
+<input id="myTask">
+<button id="add_btn">Add Task</button>
+<hr>
+<ul id="task_list">
+<li>
+Give clothes to laundary
+<input type="checkbox">
+</li>
+<li>
+Bring Vegetables from market    
+<input type="checkbox">
+</li>
+<li>
+Pay the electricity bill    
+<input type="checkbox">
+</li>
+</ul>
+</body>
+<script>
+document.getElementById("task_list").addEventListener('click',function(evt){
+var element = evt.target;
+console.log(element.type)
+if(element.type == 'checkbox'){
+    element.parentNode.style.textDecoration = "line-through";
+}
+})
+
+document.getElementById('add_btn').addEventListener('click',function(evt){
+   
+var task = document.getElementById('myTask').value;
+console.log('The task is ',task)
+var target = document.getElementById("task_list");
+var newtask = "<li>"+task+" <input type='checkbox' ></li>";
+target.insertAdjacentHTML("beforeend",newtask);
+document.getElementById("myTask").value = "";
+})
+
+</script>
+</html>

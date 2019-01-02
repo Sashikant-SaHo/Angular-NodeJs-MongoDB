@@ -1,0 +1,13 @@
+.myclass{
+width : 100px;
+height : 50px;
+background-color: #ffffff;
+border : 1px solid #000000;
+border-radius: 10px;
+margin-left : 20px;
+margin-top : 20px;
+text-align: center;
+color : red;
+font-family: 'georgia Time New Roman';
+font-size: 25px;
+}

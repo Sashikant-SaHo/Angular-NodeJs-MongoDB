@@ -1,0 +1,33 @@
+<html>
+    <head>
+    <style>
+        .parent{
+            width : 500px;
+            height : 500px;
+            background-color : red;
+        }
+        .child{
+            width : 100px;
+            height : 100px;
+            background-color : green;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="parent" class="parent">
+
+            <p id="child" class="child">
+
+            </p>
+
+        </div>
+    </body>
+    <script>
+    document.getElementById("parent").addEventListener("click",function(){
+        alert("Inside parent")
+    },true)
+    document.getElementById("child").addEventListener("click",function(){
+        alert("Inside child")
+    },true)
+    </script>
+</html>

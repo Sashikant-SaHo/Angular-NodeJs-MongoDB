@@ -1,0 +1,52 @@
+<html>
+<head>
+
+</head>
+<body>
+<div id="parent">
+    <h1>Sujit</h1>
+    <p id="id1">Alto</p>
+
+</div>
+<hr>
+<button onclick="addcar('Baleno')">Gift Baleno</button>
+<button onclick="addcar('Dezire')">Gift Dezire</button>
+<button onclick="removecar()">Take away car</button>
+<button onclick="replacecar('Tata safari')">Replace  car</button>
+<button onclick="addBefore()">Add before</button>
+</body>
+<script>
+function addcar(carName){
+var newcar = document.createElement('p');
+var carname = document.createTextNode(carName);
+newcar.appendChild(carname);
+var target = document.getElementById("parent");
+target.appendChild(newcar)
+}
+function removecar(){
+  var rmcar = document.getElementById('id1');
+  var target = document.getElementById("parent");
+  target.removeChild(rmcar);  
+}
+function replacecar(newcarname){
+    var newcar = document.createElement('p');
+    var newcarname = document.createTextNode(newcarname);
+    newcar.appendChild(newcarname);
+
+    var replaceitem = document.getElementById('id1');
+    var container = document.getElementById('parent');
+    container.replaceChild(newcar,replaceitem)
+
+}
+
+function addBefore(){
+    var oldestcar = document.createElement('p');
+    var oldestcarname = document.createTextNode('Maruti 800');
+    oldestcar.appendChild(oldestcarname);
+
+    var altoref = document.getElementById('id1');
+    var container = document.getElementById('parent');
+    container.insertBefore(oldestcar,altoref)
+}
+</script>
+</html>

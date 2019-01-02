@@ -1,0 +1,18 @@
+
+document.createElement('p')
+document.removeChild()
+document.appendChild()
+document.replaceChild()
+document.write()
+
+<div id="sujit">
+<h1>Sujit Babu</h1>
+
+
+</div>
+
+t1=document.createElement('p');
+t2=document.createTextNode('BMW')
+t1.appendChild(t2)
+var target = document.getElementById('sujit)
+target.appendChild(t1)

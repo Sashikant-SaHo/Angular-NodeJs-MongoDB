@@ -1,0 +1,46 @@
+
+<div class="form-group">
+<h3>Contact Form </h3> 
+</div>
+
+<app-message></app-message>
+
+<form [formGroup]="frm">
+<div class="form-group">
+  <label>
+    Name : 
+  </label>
+  <input class="form-control" formControlName="name">
+<div style="color:red" *ngIf="frm.get('name').errors && frm.get('name').touched">
+<span *ngIf="frm.get('name').errors['required']">Name required</span>
+</div>
+</div>
+
+
+
+<div class="form-group">
+  <label>
+    Email : 
+  </label>
+  <input class="form-control" formControlName="email">
+  <div style="color:red" *ngIf="frm.get('email').errors && frm.get('email').touched">
+      <span *ngIf="frm.get('email').errors['required']">Email required</span>
+      </div>
+</div>
+
+<div class="form-group">
+  <label>
+    Mobile : 
+  </label>
+  <input class="form-control" formControlName="mobile">
+  <div style="color:red" *ngIf="frm.get('mobile').errors && frm.get('mobile').touched">
+      <span *ngIf="frm.get('mobile').errors['required']">Mobile required</span>
+  </div>
+</div>
+
+
+<div class="form-group">
+<button (click)="saveContact()" class="btn btn-primary" [disabled]="!frm.valid" (click)="saveContact()">Save Contact</button>  
+</div>
+
+</form>

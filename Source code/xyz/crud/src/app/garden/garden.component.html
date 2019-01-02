@@ -1,0 +1,16 @@
+<div class="row">
+
+<div class="col-lg-6">
+
+<div *ngFor="let x of flowers">
+<app-flower [info]="x" (getFlowerData)="collectFlowerInfo($event)"></app-flower>
+</div>
+
+
+
+</div>
+
+<div class="col-lg-6">
+  <app-flowerdes *ngIf="flowerdata" [flowerdata]="flowerdata"></app-flowerdes>
+</div>
+</div>

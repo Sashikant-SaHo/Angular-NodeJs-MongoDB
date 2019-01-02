@@ -1,0 +1,29 @@
+<p>
+  Employee Name : <input [(ngModel)]="emp_name">
+  <br>
+  Employee Age : <input [(ngModel)]="emp_age">
+  <br>
+  Employee Salary : <input [(ngModel)]="emp_sal">
+  <br>
+  <button *ngIf="btn_stt" (click)="saveEmployee()">Save</button>
+  <button *ngIf="!btn_stt" (click)="updateEmployee()">Update</button>
+
+</p>
+
+<h1>Employee List</h1>
+<table>
+  <th>Name</th><th>Age</th><th>Salary</th><th>Action</th>
+  <tr *ngFor="let x of emps;let i = index">
+<td>{{x.name}}</td>
+<td>{{x.age}}</td>
+<td>{{x.sal}} </td>
+<td>
+
+  <img [src]="x.pic" width=100 height=100>
+</td>
+<td><button (click)="removeEmployee(i)">Delete</button></td>
+<td>
+  <button (click)="editEmployee(x)">Edit</button>
+</td>
+  </tr>
+</table>
