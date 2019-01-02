@@ -1,0 +1,52 @@
+<p>
+  Doctor Name : <input [(ngModel)]="doc.name">
+</p>
+
+<p>
+  Doctor Age : <input [(ngModel)]="doc.age">
+</p>
+
+<p>
+  Doctor Fee : <input [(ngModel)]="doc.fee">
+</p>
+
+<p>
+  Doctor Specialization : 
+  <select [(ngModel)]="doc.sp">
+    <option value="">Select Specialization</option>
+    <option value="ent">ENT</option>
+    <option value="cardio">cardio</option>
+  </select>
+</p>
+
+<p>
+  <button *ngIf="boolean_btn" (click)="saveRecord()">Save</button>
+  <button *ngIf="!boolean_btn" (click)="updateRecord()">Update</button>
+</p>
+
+<hr>
+<table>
+  <th>Name</th><th>Specialization</th><th>Age</th><th>Fee</th><th>Action</th>
+<tr *ngFor="let x of doctors">
+<td>{{x.data.name}}</td>
+<td>{{x.data.sp}}</td>
+<td>{{x.data.age}}</td>
+<td>{{x.data.fee}}</td>
+<td>
+  <button (click)="delDoc(x.id)">Delete</button>
+  <button (click)="editDoc(x)">Edit</button>
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+

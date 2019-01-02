@@ -1,0 +1,21 @@
+<form #f="ngForm">
+<div>
+  Name : <input name="nm" ngModel required pattern="^[a-zA-Z]*$" minlength="3" maxlength="10" #nme="ngModel">
+  <br>
+<div *ngIf="nme.errors && nme.touched" style="color:red;">
+<span *ngIf="nme.errors['required']">Name required !</span>
+<span *ngIf="nme.errors['minlength']">Minimum 3 characters required !</span>
+<span *ngIf="nme.errors['pattern']">Only characters allowed !</span>
+</div>
+</div>
+<p>
+  Email : <input name="em" ngModel required #eme="ngModel">
+</p>
+<p>
+  <button [disabled]="!f.valid" (click)="register()">Login</button>
+  <button  (click)="clear()">Clear</button>
+</p>
+</form>
+
+
+
